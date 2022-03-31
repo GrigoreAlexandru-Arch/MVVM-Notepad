@@ -1,0 +1,17 @@
+﻿<Window x:Class="MVP_Notepad.View.AboutDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVP_Notepad.View"
+        xmlns:custom="clr-namespace:MVP_Notepad.Utils"
+        mc:Ignorable="d"
+        Title="AboutDialog" Height="127" Width="359"
+        ResizeMode="NoResize">
+    <Grid>
+        <Label x:Name="label" Content="Made by: Grigore Alexandru Mihai&#xD;&#xA;Grupa: 10LF202" Margin="0,0,10,7" Height="79" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="331"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="235,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.69,-2.445">
+            <Hyperlink NavigateUri="mailto:grigore.alexandru@unitbv.ro" custom:HyperlinkExtensions.IsExternal="true">Email</Hyperlink>
+        </TextBlock>
+    </Grid>
+</Window>

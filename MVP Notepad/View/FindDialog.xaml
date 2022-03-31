@@ -1,0 +1,22 @@
+﻿<Window x:Class="MVP_Notepad.View.FindDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vms="clr-namespace:MVP_Notepad.ViewModel"
+        xmlns:utils="clr-namespace:MVP_Notepad.Utils"        
+        utils:DialogCloser.DialogResult="{Binding DialogResult}"
+        mc:Ignorable="d"
+        Title="Find" Height="146" Width="343"
+        ResizeMode="NoResize">
+    <Window.DataContext>
+        <vms:FindViewModel x:Name="FindViewModelContext"/>
+    </Window.DataContext>
+    <Grid Margin="0,0,5,1" HorizontalAlignment="Right" Width="322" Height="106" VerticalAlignment="Bottom">
+        <Label x:Name="label" Content="Text to be found:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" Padding="0"/>
+        <CheckBox x:Name="ignoreCaseCheckBox" Content="Ignore Case" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" IsChecked="{Binding IgnoreCase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <CheckBox x:Name="searchAllOpenedTabsCheckbox" Content="Search all opened tabs" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Padding="4,-1,0,0" IsChecked="{Binding SearchInAllTabs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="textBox" Height="23" Margin="10,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="305" Text="{Binding SearchedText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button x:Name="findButton" Content="Find" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="240,70,0,0" Command="{Binding FindCommnad}"/>
+    </Grid>
+</Window>
